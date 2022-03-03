@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2907695137230229479}
   - component: {fileID: 8581132188369950174}
+  - component: {fileID: 8048293787466340268}
   m_Layer: 2
   m_Name: Line
   m_TagString: Untagged
@@ -42,6 +43,7 @@ LineRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -70,7 +72,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Positions:
   - {x: 0, y: 0.5, z: 0}
   - {x: 0, y: 0.5, z: 0}
@@ -129,3 +131,15 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &8048293787466340268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6322815685619712142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5e56ee534bd034ab8aa37a2422bd8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

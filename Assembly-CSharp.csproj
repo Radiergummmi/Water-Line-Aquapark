@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{525698CD-B0FA-7B23-54BA-1D867AD37E73}</ProjectGuid>
+    <ProjectGuid>{4E100264-E8FD-F493-3CE7-9F6935C6B9A7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,26 +58,44 @@
   <ItemGroup>
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
     <Compile Include="Assets\Scripts\DrawPath.cs" />
-    <Compile Include="Assets\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
     <Compile Include="Assets\ToonWaterShader-master\Assets\Scripts\NormalsReplacementShader.cs" />
     <Compile Include="Assets\Scripts\MeshDeformation.cs" />
+    <Compile Include="Assets\Scripts\PatternScript\Singleton.cs" />
+    <Compile Include="Assets\Scripts\FinishObject.cs" />
+    <Compile Include="Assets\ToonWaterShader-master\Assets\Scripts\WaterBob.cs" />
+    <Compile Include="Assets\Scripts\SwimenBoy.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathPlacer.cs" />
     <Compile Include="Assets\ToonWaterShader-master\Assets\Scripts\CameraDepthTextureMode.cs" />
-    <Compile Include="Assets\Scripts\PatternScript\Singleton.cs" />
+    <Compile Include="Assets\Scripts\LineRendererWater.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
     <Compile Include="Assets\Scripts\SlideObject.cs" />
-    <Compile Include="Assets\Scripts\FinishObject.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\PathFollower.cs" />
-    <Compile Include="Assets\ToonWaterShader-master\Assets\Scripts\WaterBob.cs" />
     <Compile Include="Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\FlatKit\Demos\Common\Scripts\Motion\CameraMouseOrbit.cs" />
+    <Compile Include="Assets\FlatKit\Demos\Common\Scripts\Motion\LinearMotion.cs" />
+    <Compile Include="Assets\FlatKit\Scripts\UvScroller.cs" />
+    <Compile Include="Assets\FlatKit\[Render Pipeline] Built-in\ImageEffects\Scripts\FogImageEffect.cs" />
+    <Compile Include="Assets\FlatKit\[Render Pipeline] Built-in\ImageEffects\Scripts\OutlineImageEffect.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\FlatKit\[Render Pipeline] Built-in\ImageEffects\Resources\OutlinePlus.shader" />
+    <None Include="Assets\FlatKit\Shaders\StylizedSurface\DustyroomTerrainSplatmapCommon.cginc" />
     <None Include="Assets\ToonWaterShader-master\Assets\Shaders\ToonWater.shader" />
+    <None Include="Assets\FlatKit\Shaders\GradientSkybox\GradientSkybox.shader" />
     <None Include="Assets\ToonWaterShader-master\Assets\Shaders\UnlitShadowCaster.shader" />
+    <None Include="Assets\FlatKit\Shaders\StylizedSurface\DustyroomStylizedLighting.cginc" />
     <None Include="Assets\ToonWaterShader-master\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\ToonWaterShader-master\Assets\Shaders\ToonLit.shader" />
+    <None Include="Assets\FlatKit\Shaders\StylizedSurface\StylizedSurfaceOutline.shader" />
     <None Include="Assets\ToonWaterShader-master\Assets\Shaders\HiddenNormalsTexture.shader" />
+    <None Include="Assets\FlatKit\[Render Pipeline] Built-in\ImageEffects\Resources\FogPlus.shader" />
+    <None Include="Assets\FlatKit\[READ ME].txt" />
+    <None Include="Assets\FlatKit\Shaders\StylizedSurface\StylizedSurfaceCutout.shader" />
+    <None Include="Assets\FlatKit\Shaders\StylizedSurface\StylizedSurface.shader" />
+    <None Include="Assets\FlatKit\Shaders\LightPlane.shader" />
+    <None Include="Assets\FlatKit\Shaders\StylizedSurface\Terrain.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -304,6 +322,9 @@
     </Reference>
     <Reference Include="DOTween">
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.6.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
@@ -653,6 +674,9 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:\Program Files\Unity 2021.1.28f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Recorder.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
     </Reference>
@@ -674,8 +698,20 @@
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="VSSettingsProvider">
+      <HintPath>Library\ScriptAssemblies\VSSettingsProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -689,21 +725,27 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.State">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Recorder">
       <HintPath>Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{3ED9E3DA-DD50-DD8B-A175-AF5F34423816}</Project>
+      <Project>{A42D21B2-E592-635D-2843-2AAA6554CE0E}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="PathCreatorEditor.csproj">
-      <Project>{58201506-4AE2-6046-C4BD-FAAC89373E5D}</Project>
+      <Project>{F7D4398C-BBE8-E9C4-6E71-752FBBD71EBC}</Project>
       <Name>PathCreatorEditor</Name>
     </ProjectReference>
     <ProjectReference Include="PathCreator.csproj">
-      <Project>{32D1836E-D6CE-6988-AAF2-2E75FEF63889}</Project>
+      <Project>{FE1DFD59-F5AD-1DDB-7E51-8FC94050EB48}</Project>
       <Name>PathCreator</Name>
     </ProjectReference>
   </ItemGroup>

@@ -16,6 +16,8 @@ public class DrawPath : MonoBehaviour
     private List<Vector3> ArrayLinePos = new List<Vector3>();
     private float numberCar;
     private bool FinishToFind = false;
+
+  
     void Start()
     {
 
@@ -34,8 +36,9 @@ public class DrawPath : MonoBehaviour
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject.GetComponent<SlideObject>())
+                if (hit.collider.gameObject.GetComponent<SlideObject>() && !hit.collider.gameObject.GetComponent<SlideObject>().GetReady)
                 {
+                    MeshDeformation.Instance.MouseClick();
                     CurrentSlide = hit.collider.gameObject;
                     numberCar = (float)CurrentSlide.GetComponent<SlideObject>().Number / 1000;
                     CurrentSlide.GetComponent<SlideObject>().DestroyLineAndPath();
@@ -62,6 +65,7 @@ public class DrawPath : MonoBehaviour
                 flag = true;
                 endPoint = hit.point;
                 endPoint.y = yAxis;
+                MeshDeformation.Instance.ActiveMeshDeformation();
                 if (Vector3.Distance(LineLastPos, endPoint) > 0.06f && Vector3.Distance(LineLastPos, endPoint) < 2f)
                 {
                     ArrayLinePos.Add(endPoint);
@@ -80,7 +84,7 @@ public class DrawPath : MonoBehaviour
                     CurrentLine.positionCount = ArrayLinePos.Count;
                     for (int i = 0; i < ArrayLinePos.Count; i++)
                     {
-                        CurrentLine.SetPosition(i, new Vector3(ArrayLinePos[i].x, 0.3f + numberCar, ArrayLinePos[i].z));
+                        CurrentLine.SetPosition(i, new Vector3(ArrayLinePos[i].x, -0.15f + numberCar, ArrayLinePos[i].z));
                     }
                 }
                 //VibrationController.Instance.VibrateWithTypeSelection();
@@ -91,7 +95,7 @@ public class DrawPath : MonoBehaviour
             RaycastHit hit;
             Ray ray;
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+            
             if (FinishToFind)
             {
                 Vector3[] Array = ArrayLinePos.ToArray();
@@ -102,6 +106,7 @@ public class DrawPath : MonoBehaviour
             else if (!CurrentSlide.GetComponent<SlideObject>().Buldozer)
             {
                 Destroy(CurrentLine.gameObject); //сделать анимацию уменьшения
+                MeshDeformation.Instance.CliearVerticies();
             }
             else
             {

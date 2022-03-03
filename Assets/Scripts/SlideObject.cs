@@ -15,7 +15,7 @@ public class SlideObject : MonoBehaviour
     public Material LineColor;
     public bool Buldozer = false;
     private bool FinishHim = false;
-    [SerializeField] private GameObject[] Cars;
+    [SerializeField] private GameObject[] SwimenBoys;
     public bool GetReady
     {
         get { return Ready; }
@@ -34,23 +34,13 @@ public class SlideObject : MonoBehaviour
         //    Cars[PlayerPrefs.GetInt("NumberCar", 0)].SetActive(true);
            GameController.Instance.SetCar = gameObject;
         //}
-        transform.DOScaleY(transform.localScale.y + 0.05f, 0.1f).SetLoops(-1, LoopType.Yoyo);
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            int fdf = PlayerPrefs.GetInt("NumberCar", 0);
-
-            fdf++;
-            if (fdf > 8)
-            {
-                fdf = 0;
-            }
-            PlayerPrefs.SetInt("NumberCar", fdf);
-        }
+       
     }
     public void PathAndLine(Vector3[] Path, GameObject line)
     {
@@ -60,16 +50,25 @@ public class SlideObject : MonoBehaviour
     }
     public void Move()
     {
-        Mysequence = DOTween.Sequence();
-        float dist = 0;
-        for (int i = 0; i < NewPos.Length; i++)
+        StartCoroutine(TimerMove());
+        //Mysequence = DOTween.Sequence();
+        //float dist = 0;
+        //for (int i = 0; i < NewPos.Length; i++)
+        //{
+        //    if (i + 1 < NewPos.Length)
+        //    {
+        //        dist += Vector3.Distance(NewPos[i], NewPos[i + 1]);
+        //    }
+        //}
+        //Mysequence.Append(transform.DOPath(NewPos, dist / 3).OnWaypointChange(LookAtPos).SetEase(Ease.Linear));
+    }
+    private IEnumerator TimerMove()
+    {
+        for (int i = 0; i < SwimenBoys.Length; i++)
         {
-            if (i + 1 < NewPos.Length)
-            {
-                dist += Vector3.Distance(NewPos[i], NewPos[i + 1]);
-            }
+            SwimenBoys[i].GetComponent<SwimenBoy>().Move(NewPos);
+            yield return new WaitForSeconds(0.5f);
         }
-        Mysequence.Append(transform.DOPath(NewPos, dist / 3).OnWaypointChange(LookAtPos).SetEase(Ease.Linear));
     }
     public void DestroyLineAndPath()
     {
@@ -77,15 +76,7 @@ public class SlideObject : MonoBehaviour
         NewPos = new Vector3[0];
         Destroy(CurrenLine);
     }
-    private void LookAtPos(int i)
-    {
-        if (i > 0)
-        {
-            Vector3 dir = NewPos[i] - transform.position;
-            Quaternion Rotate = Quaternion.LookRotation(dir);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Rotate, Time.deltaTime * 100);
-        }
-    }
+  
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<FinishObject>() && other.gameObject.GetComponent<FinishObject>().Number == Number && !FinishHim)

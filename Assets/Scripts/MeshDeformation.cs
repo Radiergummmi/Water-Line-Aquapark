@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeshDeformation : MonoBehaviour
+public class MeshDeformation : Singleton<MeshDeformation>
 {
     [Range(0.1f, 5)]
     public float Radius = 2;
@@ -14,12 +14,12 @@ public class MeshDeformation : MonoBehaviour
     [SerializeField] private float Size;
     private Mesh m_Mesh;
 
-    private Vector3[] Verticies, ModifiedVerts;
-
+    private Vector3[]  ModifiedVerts;
+    private List<Vector3> DopVerticies = new List<Vector3>();
     private void Start()
     {
         m_Mesh = GetComponentInChildren<MeshFilter>().mesh;
-        Verticies = m_Mesh.vertices;
+      
         ModifiedVerts = m_Mesh.vertices;
 
     }
@@ -31,10 +31,22 @@ public class MeshDeformation : MonoBehaviour
     }
     private void Update()
     {
+       
+    }
+    public void MouseClick()
+    {
+        DopVerticies = new List<Vector3>();
+        for (int i = 0; i < ModifiedVerts.Length; i++)
+        {
+            DopVerticies.Add(ModifiedVerts[i]);
+        }
+    }
+    public void ActiveMeshDeformation()
+    {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if(Physics.Raycast(ray,out hit, Mathf.Infinity))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
             for (int i = 0; i < ModifiedVerts.Length; i++)
             {
@@ -43,7 +55,7 @@ public class MeshDeformation : MonoBehaviour
 
                 if (Distance.sqrMagnitude < Radius)
                 {
-                    
+
                     if (Input.GetMouseButton(0))
                     {
                         if (ModifiedVerts[i].y > -Size)
@@ -51,23 +63,18 @@ public class MeshDeformation : MonoBehaviour
                             // ModifiedVerts[i] = ModifiedVerts[i] + (Vector3.down * force) / smoothingFactor;
                             Vector3 Vert = ModifiedVerts[i];
                             Vector3 Center = hit.point;
-                           // Vert.y = Center.y = 0 ;
+                            // Vert.y = Center.y = 0 ;
 
                             float dist = Vector3.Distance(Vert, Center);
 
-                            if(dist < Radius)
+                            if (dist < Radius)
                             {
                                 float NewY = -Size * (Radius - dist / Radius);
                                 if (ModifiedVerts[i].y > NewY)
                                 {
                                     ModifiedVerts[i].y = NewY;
-
                                 }
-                               
                             }
-
-                            
-
                         }
                     }
                 }
@@ -75,5 +82,9 @@ public class MeshDeformation : MonoBehaviour
         }
         RecalculateMesh();
     }
-
+    public void CliearVerticies()
+    {
+        ModifiedVerts = DopVerticies.ToArray();
+        RecalculateMesh();
+    }
 }
