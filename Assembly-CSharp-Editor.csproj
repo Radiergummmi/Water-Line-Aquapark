@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{46256763-E8F1-AD6F-4B2F-6F4C106B0DB4}</ProjectGuid>
+    <ProjectGuid>{6EC46929-C6E9-FCD5-C3B0-DEF9A9578B00}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -56,10 +56,10 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PathCreator\Examples\Scripts\Editor\PathSceneToolEditor.cs" />
     <Compile Include="Assets\FlatKit\Demos\Common\Scripts\Motion\Editor\LinearMotionEditor.cs" />
-    <Compile Include="Assets\FlatKit\Shaders\GradientSkybox\Editor\GradientSkyboxEditor.cs" />
     <Compile Include="Assets\FlatKit\Shaders\Editor\StylizedSurfaceEditor.cs" />
+    <Compile Include="Assets\FlatKit\Shaders\GradientSkybox\Editor\GradientSkyboxEditor.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\Editor\PathSceneToolEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -752,19 +752,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{A42D21B2-E592-635D-2843-2AAA6554CE0E}</Project>
+      <Project>{B10A9906-DBCF-6E78-8967-7D31F1F4EAD9}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{4E100264-E8FD-F493-3CE7-9F6935C6B9A7}</Project>
+      <Project>{3DDC4103-FDB2-9738-69D2-B023BE3AF609}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="PathCreatorEditor.csproj">
-      <Project>{F7D4398C-BBE8-E9C4-6E71-752FBBD71EBC}</Project>
+      <Project>{DFA992F6-45CD-18AD-B418-4116B301CFBA}</Project>
       <Name>PathCreatorEditor</Name>
     </ProjectReference>
     <ProjectReference Include="PathCreator.csproj">
-      <Project>{FE1DFD59-F5AD-1DDB-7E51-8FC94050EB48}</Project>
+      <Project>{9F1819C0-CAAE-0148-7F4F-D05523F963AB}</Project>
       <Name>PathCreator</Name>
     </ProjectReference>
   </ItemGroup>

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{FE1DFD59-F5AD-1DDB-7E51-8FC94050EB48}</ProjectGuid>
+    <ProjectGuid>{9F1819C0-CAAE-0148-7F4F-D05523F963AB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>PathCreator</AssemblyName>
