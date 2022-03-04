@@ -66,7 +66,7 @@ public class DrawPath : MonoBehaviour
                 endPoint = hit.point;
                 endPoint.y = yAxis;
                 bool Distans = Vector3.Distance(LineLastPos, endPoint) > 0.06f && Vector3.Distance(LineLastPos, endPoint) < 1f;
-                if (Distans && hit.collider.gameObject.tag == "Plane")
+                if (Distans && hit.collider.gameObject.tag == "Plane" || hit.collider.gameObject.GetComponent<SlideObject>() && Distans)
                 {
                     MeshDeformation.Instance.ActiveMeshDeformation();
                     ArrayLinePos.Add(endPoint);
