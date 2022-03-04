@@ -12,7 +12,7 @@ public class SlideObject : MonoBehaviour
     private bool Ready = false;
     Sequence Mysequence;
     Rigidbody rb;
-    public Material LineColor;
+    public Material[] LineColor;
     public bool Buldozer = false;
     private bool FinishHim = false;
     [SerializeField] private GameObject[] SwimenBoys;
@@ -21,7 +21,13 @@ public class SlideObject : MonoBehaviour
     {
         get { return Ready; }
     }
-
+    public Material GetMaterialLine
+    {
+        get
+        {
+            return LineColor[Number];
+        }
+    }
     void Start()
     {
 

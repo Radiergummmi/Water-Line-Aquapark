@@ -34,7 +34,7 @@ public class DrawPath : MonoBehaviour
             RaycastHit hit;
             Ray ray;
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit) )
             {
                 if (hit.collider.gameObject.GetComponent<SlideObject>() && !hit.collider.gameObject.GetComponent<SlideObject>().GetReady)
                 {
@@ -47,7 +47,7 @@ public class DrawPath : MonoBehaviour
                     yAxis = CurrentSlide.transform.position.y;
                     var line = Instantiate(Line, hit.point, Line.transform.rotation);
                     CurrentLine = line.GetComponent<LineRenderer>();
-                    CurrentLine.material = CurrentSlide.GetComponent<SlideObject>().LineColor;
+                    CurrentLine.material = CurrentSlide.GetComponent<SlideObject>().GetMaterialLine;
                     CurrentLine.SetPosition(0, hit.point);
                     CurrentLine.SetPosition(1, hit.point);
                     LineLastPos = hit.point;
@@ -59,15 +59,16 @@ public class DrawPath : MonoBehaviour
             RaycastHit hit;
             Ray ray;
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit) )
             {
 
                 flag = true;
                 endPoint = hit.point;
                 endPoint.y = yAxis;
-                MeshDeformation.Instance.ActiveMeshDeformation();
-                if (Vector3.Distance(LineLastPos, endPoint) > 0.06f && Vector3.Distance(LineLastPos, endPoint) < 2f)
+                bool Distans = Vector3.Distance(LineLastPos, endPoint) > 0.06f && Vector3.Distance(LineLastPos, endPoint) < 1f;
+                if (Distans && hit.collider.gameObject.tag == "Plane")
                 {
+                    MeshDeformation.Instance.ActiveMeshDeformation();
                     ArrayLinePos.Add(endPoint);
                     CurrentLine.positionCount = ArrayLinePos.Count;
                     for (int i = 0; i < ArrayLinePos.Count; i++)
@@ -76,7 +77,7 @@ public class DrawPath : MonoBehaviour
                     }
                     LineLastPos = endPoint;
                 }
-                if (hit.collider.gameObject.GetComponent<FinishObject>() && CurrentSlide.GetComponent<SlideObject>().Number == hit.collider.gameObject.GetComponent<FinishObject>().Number)
+                if (hit.collider.gameObject.GetComponent<FinishObject>() && CurrentSlide.GetComponent<SlideObject>().Number == hit.collider.gameObject.GetComponent<FinishObject>().Number && Distans)
                 {
                     FinishToFind = true;
 
