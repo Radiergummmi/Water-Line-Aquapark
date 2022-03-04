@@ -12,6 +12,8 @@ public class SwimenBoy : MonoBehaviour
     Collider Col;
     Sequence Mysequence;
     List<Vector3> NewPos;
+    private GameObject FinishObject;
+    private bool RotateFinishActive = false;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,9 +24,9 @@ public class SwimenBoy : MonoBehaviour
         }
         BoysModesl[Random.Range(0, BoysModesl.Length)].SetActive(true);
     }
-    public void Move(Vector3[] Pos)
+    public void Move(Vector3[] Pos,GameObject _finish)
     {
-
+        FinishObject = _finish;
 
 
         Mysequence = DOTween.Sequence();
@@ -56,9 +58,20 @@ public class SwimenBoy : MonoBehaviour
         {
             Col.enabled = false;
             rb.isKinematic = true;
+            RotateFinishActive = true;
+            Vector3 Dir = FinishObject.transform.position - transform.position;
+
+            transform.DOMove(transform.position + (Dir/8), 0.1f);
         });
 
 
+    }
+    private void Update()
+    {
+        if (RotateFinishActive)
+        {
+            transform.RotateAround(FinishObject.transform.position, Vector3.up, 180*Time.deltaTime);
+        }
     }
     private void LookAtPos(int i)
     {
@@ -66,14 +79,14 @@ public class SwimenBoy : MonoBehaviour
         {
             Vector3 dir = NewPos[i] - transform.position;
             Quaternion Rotate = Quaternion.LookRotation(dir);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Rotate, Time.deltaTime * 100);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Rotate, Time.deltaTime * 250);
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (collision.gameObject.GetComponent<SwimenBoy>() )
+        if (collision.gameObject.GetComponent<SwimenBoy>() || collision.gameObject.tag == "Border" )
         {
             // VibrationController.Instance.VibrateWithTypeHAIDIMPACT();
             rb.isKinematic = true;

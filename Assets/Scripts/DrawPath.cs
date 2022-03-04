@@ -80,12 +80,12 @@ public class DrawPath : MonoBehaviour
                 {
                     FinishToFind = true;
 
-                    ArrayLinePos.Add(hit.collider.gameObject.transform.position);
-                    CurrentLine.positionCount = ArrayLinePos.Count;
-                    for (int i = 0; i < ArrayLinePos.Count; i++)
-                    {
-                        CurrentLine.SetPosition(i, new Vector3(ArrayLinePos[i].x, -0.15f + numberCar, ArrayLinePos[i].z));
-                    }
+                  //  ArrayLinePos.Add(hit.collider.gameObject.transform.position);
+                   // CurrentLine.positionCount = ArrayLinePos.Count;
+                    //for (int i = 0; i < ArrayLinePos.Count; i++)
+                    //{
+                    //    CurrentLine.SetPosition(i, new Vector3(ArrayLinePos[i].x, -0.15f + numberCar, ArrayLinePos[i].z));
+                    //}
                 }
                 //VibrationController.Instance.VibrateWithTypeSelection();
             }

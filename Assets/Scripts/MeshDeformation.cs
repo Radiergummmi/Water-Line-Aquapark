@@ -16,12 +16,12 @@ public class MeshDeformation : Singleton<MeshDeformation>
 
     private Vector3[]  ModifiedVerts;
     private List<Vector3> DopVerticies = new List<Vector3>();
+   
     private void Start()
     {
         m_Mesh = GetComponentInChildren<MeshFilter>().mesh;
-      
-        ModifiedVerts = m_Mesh.vertices;
 
+        ModifiedVerts = m_Mesh.vertices;
     }
     private void RecalculateMesh()
     {
@@ -85,6 +85,42 @@ public class MeshDeformation : Singleton<MeshDeformation>
     public void CliearVerticies()
     {
         ModifiedVerts = DopVerticies.ToArray();
+        RecalculateMesh();
+    }
+
+    public void TargetDeformation(Vector3 TargetPos)
+    {
+        // TargetPos = new Vector3(TargetPos.x, transform.position.y, TargetPos.y);
+        float NewRadius = Radius * 1.5f;
+        for (int i = 0; i < ModifiedVerts.Length; i++)
+        {
+            Vector3 Distance = ModifiedVerts[i] - TargetPos;
+            float force = DeformationString / (1f + TargetPos.sqrMagnitude);
+
+            if (Distance.sqrMagnitude < NewRadius)
+            {
+
+                
+                    if (ModifiedVerts[i].y > -Size)
+                    {
+                        // ModifiedVerts[i] = ModifiedVerts[i] + (Vector3.down * force) / smoothingFactor;
+                        Vector3 Vert = ModifiedVerts[i];
+                        Vector3 Center = TargetPos;
+                        // Vert.y = Center.y = 0 ;
+
+                        float dist = Vector3.Distance(Vert, Center);
+
+                        if (dist < NewRadius)
+                        {
+                            float NewY = -Size * (NewRadius - dist / NewRadius);
+                            if (ModifiedVerts[i].y > NewY)
+                            {
+                                ModifiedVerts[i].y = NewY;
+                            }
+                        }
+                    }
+            }
+        }
         RecalculateMesh();
     }
 }
