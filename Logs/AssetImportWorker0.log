@@ -1,0 +1,229 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.28f1 (f3f9dc10f3dd) revision 15989212'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19043.1526; Version 2009; 64bit' Language: 'ru' Physical Memory: 32697 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\2021.1.28f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/work/aquapark/unity project/Water-Line-Aquapark
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+55602
+Successfully changed project path to: D:/work/aquapark/unity project/Water-Line-Aquapark
+D:/work/aquapark/unity project/Water-Line-Aquapark
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 86.21 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.28f1 (f3f9dc10f3dd)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/2021.1.28f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/work/aquapark/unity project/Water-Line-Aquapark/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2070 SUPER (ID=0x1e84)
+    Vendor:   NVIDIA
+    VRAM:     8011 MB
+    Driver:   30.0.14.7212
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/2021.1.28f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/2021.1.28f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/2021.1.28f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56588
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/2021.1.28f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002215 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 85.45 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.506 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1506ms)
+		BeginReloadAssembly (58ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (446ms)
+			LoadAssemblies (55ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (148ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (225ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (86ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (107ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004421 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\work\aquapark\unity project\Water-Line-Aquapark\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\work\aquapark\unity project\Water-Line-Aquapark\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.997 seconds
+Domain Reload Profiling:
+	ReloadAssembly (998ms)
+		BeginReloadAssembly (139ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (805ms)
+			LoadAssemblies (82ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (317ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (284ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (63ms)
+				ProcessInitializeOnLoadAttributes (201ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 0.74 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3247 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 351.1 MB.
+System memory in use after: 351.3 MB.
+
+Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3699.
+Total: 3.756100 ms (FindLiveObjects: 0.285000 ms CreateObjectMapping: 0.081500 ms MarkObjects: 3.280000 ms  DeleteObjects: 0.108200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Materials/sand-texture_(3).jpg
+  artifactKey: Guid(718123d45806ca24e8d88be1fbe06791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/sand-texture_(3).jpg using Guid(718123d45806ca24e8d88be1fbe06791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbc3527446aad49c59603f9c44e388a6') in 0.093309 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Materials/SliderRed.mat
+  artifactKey: Guid(53f3740cc36778e468ac1a0bae3da056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/SliderRed.mat using Guid(53f3740cc36778e468ac1a0bae3da056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba76ed98415a20ee4a8a8cad8a1387b8') in 0.029734 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000126 seconds.
+  path: Assets/Materials/LineGreen.mat
+  artifactKey: Guid(7528d167baf507b44b96b9455407a2ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/LineGreen.mat using Guid(7528d167baf507b44b96b9455407a2ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7887ee42fc1c3724db8ace63c3616bd5') in 0.011326 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Materials/Plane 1.mat
+  artifactKey: Guid(e3165ee427965cd4c9f919669063835d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Plane 1.mat using Guid(e3165ee427965cd4c9f919669063835d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4325feb1a778e1ce74585a46c9e88735') in 0.008885 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/Materials/SliderBlue.mat
+  artifactKey: Guid(f6daccbb5ba5b4241bab4605039e19f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/SliderBlue.mat using Guid(f6daccbb5ba5b4241bab4605039e19f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b912914a85fdaeba471dffe53c88e791') in 0.013058 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Materials/LineRed.mat
+  artifactKey: Guid(f15416cd44e8c884d838945c941999dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/LineRed.mat using Guid(f15416cd44e8c884d838945c941999dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f05c7dd9d23d772f4440e0d772fdc522') in 0.009227 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000132 seconds.
+  path: Assets/Materials/Plane.mat
+  artifactKey: Guid(7bafecdc839c93d47b2608cf6ca10088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Plane.mat using Guid(7bafecdc839c93d47b2608cf6ca10088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '918c69edb9dc9c0c8fd4a38e528acd86') in 0.010199 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 45.655038 seconds.
+  path: Assets/Models/aquapark (1).psd
+  artifactKey: Guid(88984f66e21cfc849ad7abe9b9ce525c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/aquapark (1).psd using Guid(88984f66e21cfc849ad7abe9b9ce525c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f761cf4e56f7dca0d5df1eaec1d0177c') in 0.014156 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000145 seconds.
+  path: Assets/Models/char_2.fbx
+  artifactKey: Guid(0b12b5630bf05174a9ed9b14d53845b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/char_2.fbx using Guid(0b12b5630bf05174a9ed9b14d53845b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4dd265e7ad0fb4e1b0abdc761638990') in 0.038793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000157 seconds.
+  path: Assets/Models/aquapark.mat
+  artifactKey: Guid(f34d35a7c0bf0904ca8ce23139a599aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/aquapark.mat using Guid(f34d35a7c0bf0904ca8ce23139a599aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4263fdccf3c4e12903016971a3f7d488') in 0.007957 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000130 seconds.
+  path: Assets/Models/char_1.fbx
+  artifactKey: Guid(35a7e21c8ad087849a60c43cbdcbd06f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/char_1.fbx using Guid(35a7e21c8ad087849a60c43cbdcbd06f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcb9f13534ab99d006753f5af6b02494') in 0.018269 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Assets/Models/char_3.fbx
+  artifactKey: Guid(c7cafb39ca356844796899a7e8ce4bc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/char_3.fbx using Guid(c7cafb39ca356844796899a7e8ce4bc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46038a86582ab46f80b7dd41dcf9ae86') in 0.020799 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000154 seconds.
+  path: Assets/Models/pool_2.fbx
+  artifactKey: Guid(c4951d63eedf830499e652ec8ffdcdd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/pool_2.fbx using Guid(c4951d63eedf830499e652ec8ffdcdd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a6e4505f7190f3b5b297a5a6a74ce8f') in 0.021532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000152 seconds.
+  path: Assets/Models/pool_1.fbx
+  artifactKey: Guid(1d48ada7538868b4abfa4b1ec852945c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/pool_1.fbx using Guid(1d48ada7538868b4abfa4b1ec852945c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1048c9b97e9bfe19e86dc3413d9deb15') in 0.015944 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/Models/Plane.002.fbx
+  artifactKey: Guid(3ec56701fac7fc94ea70381d5b3c67e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Plane.002.fbx using Guid(3ec56701fac7fc94ea70381d5b3c67e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '529acd444465c2040c3377a9b3898768') in 0.010582 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.249358 seconds.
+  path: Assets/Models/aquapark.mat
+  artifactKey: Guid(f34d35a7c0bf0904ca8ce23139a599aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/aquapark.mat using Guid(f34d35a7c0bf0904ca8ce23139a599aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17891a0e3625df3f0d1c420198e01757') in 0.014869 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
